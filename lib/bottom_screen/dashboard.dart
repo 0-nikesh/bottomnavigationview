@@ -1,3 +1,7 @@
+import 'package:bottomnavigationview/bottom_screen/about.dart';
+import 'package:bottomnavigationview/bottom_screen/cart.dart';
+import 'package:bottomnavigationview/bottom_screen/home.dart';
+import 'package:bottomnavigationview/bottom_screen/profile.dart';
 import 'package:flutter/material.dart';
 
 class DashboardView extends StatefulWidget {
@@ -9,13 +13,17 @@ class DashboardView extends StatefulWidget {
 
 class _DashboardViewState extends State<DashboardView> {
   int _selectedIndex = 0;
+
+  List<Widget> lstBottomScreen = [
+    const HomeView(),
+    const CartScreen(),
+    const ProfilePage(),
+    const AboutScreen(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Dashboard'),
-        centerTitle: true,
-      ),
+      body: lstBottomScreen[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           items: const [
@@ -36,6 +44,9 @@ class _DashboardViewState extends State<DashboardView> {
               label: 'About',
             ),
           ],
+          backgroundColor: Colors.amber,
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.black,
           currentIndex: _selectedIndex,
           onTap: (index) {
             setState(() {
