@@ -61,10 +61,10 @@ class ArithmeticCubitView extends StatelessWidget {
           const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
-              final String nameController = String.parse(nameController.text);
-              final int ageController = int.parse(AgeController.text);
-              final 
-              context.read<ArithmeticCubit>().add(firstNumber, secondNumber);
+              // final String nameController = String.parse(nameController.text);
+              // final int ageController = int.parse(AgeController.text);
+              // final
+              // context.read<ArithmeticCubit>().add(firstNumber, secondNumber);
             },
             child: const Text('SUbmit'),
           ),
