@@ -12,12 +12,38 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home"),
+        title: const Text(
+          "Home",
+          style: TextStyle(
+            fontFamily: "Montserrat Bold",
+            fontSize: 20,
+          ),
+        ),
       ),
       body: Column(
         children: [
-          TextFormField(),
-          ElevatedButton(onPressed: () {}, child: Text("Button")),
+          // Border.all(color: const Colors.red, width: 5,),
+          TextFormField(
+            decoration: InputDecoration(
+                labelText: 'Write here',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12.2),
+                )),
+          ),
+          ElevatedButton(onPressed: () {}, child: const Text("Button")),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xff20D21A),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+            ),
+            onPressed: () {},
+            child: const Text(
+              "Green Button",
+              style: TextStyle(color: Colors.black),
+            ),
+          ),
         ],
       ),
     );
