@@ -1,5 +1,8 @@
 import 'package:bottomnavigationview/cubit/arithemetic_cubit.dart';
-import 'package:bottomnavigationview/view/arithemetic_cubit_view.dart';
+import 'package:bottomnavigationview/cubit/counter_cubit.dart';
+import 'package:bottomnavigationview/cubit/dashboard_cubit.dart';
+import 'package:bottomnavigationview/cubit/student_cubit.dart';
+import 'package:bottomnavigationview/view/dashboard_cubit_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -8,11 +11,23 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter BLoC',
-      home: BlocProvider(
-        create: (context) => ArithmeticCubit(),
-        child: ArithmeticCubitView(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => CounterCubit()),
+        BlocProvider(create: (context) => ArithmeticCubit()),
+        BlocProvider(create: (context) => StudentCubit()),
+        BlocProvider(
+            create: (context) => DashboardCubit(
+                  context.read<CounterCubit>(),
+                  context.read<ArithmeticCubit>(),
+                  context.read<StudentCubit>(),
+                ))
+      ],
+      child: const MaterialApp(
+        // title: 'Flutter BLoC',
+        debugShowCheckedModeBanner: false,
+
+        home: DashboardCubitView(),
       ),
     );
   }
