@@ -36,9 +36,9 @@ class DashboardCubitView extends StatelessWidget {
           ),
           Card(
             child: InkWell(
-              onTap: () {
-                context.read<DashboardCubit>().openArtithemeticView(context);
-              },
+              onTap: () => context
+                  .read<DashboardCubit>()
+                  .openArtithemeticBlocView(context),
               child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -65,13 +65,13 @@ class DashboardCubitView extends StatelessWidget {
           Card(
             child: InkWell(
               onTap: () {
-                context.read<DashboardCubit>().openAreaOfCircleView(context);
+                context.read<DashboardCubit>().openCounterView(context);
               },
               child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Icon(Icons.circle, size: 48),
-                  Text('Area of Circle'),
+                  Icon(Icons.add, size: 48),
+                  Text('Counter Bloc'),
                 ],
               ),
             ),
@@ -79,13 +79,13 @@ class DashboardCubitView extends StatelessWidget {
           Card(
             child: InkWell(
               onTap: () {
-                context.read<DashboardCubit>().openSimpleInterestView(context);
+                context.read<DashboardCubit>().openArtithemeticView(context);
               },
               child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Icon(Icons.interests_rounded, size: 48),
-                  Text('Simple Interest'),
+                  Icon(Icons.calculate, size: 48),
+                  Text('Arithmetic Bloc'),
                 ],
               ),
             ),
@@ -93,17 +93,59 @@ class DashboardCubitView extends StatelessWidget {
           Card(
             child: InkWell(
               onTap: () {
-                context.read<DashboardCubit>().openTsaOfCube(context);
+                context.read<DashboardCubit>().openStudentView(context);
               },
               child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Icon(Icons.shape_line, size: 48),
-                  Text('TSA of Cube'),
+                  Icon(Icons.person, size: 48),
+                  Text('Student Bloc'),
                 ],
               ),
             ),
           ),
+          // Card(
+          //   child: InkWell(
+          //     onTap: () {
+          //       context.read<DashboardCubit>().openAreaOfCircleView(context);
+          //     },
+          //     child: const Column(
+          //       mainAxisAlignment: MainAxisAlignment.center,
+          //       children: <Widget>[
+          //         Icon(Icons.circle, size: 48),
+          //         Text('Area of Circle'),
+          //       ],
+          //     ),
+          //   ),
+          // ),
+          // Card(
+          //   child: InkWell(
+          //     onTap: () {
+          //       context.read<DashboardCubit>().openSimpleInterestView(context);
+          //     },
+          //     child: const Column(
+          //       mainAxisAlignment: MainAxisAlignment.center,
+          //       children: <Widget>[
+          //         Icon(Icons.interests_rounded, size: 48),
+          //         Text('Simple Interest'),
+          //       ],
+          //     ),
+          //   ),
+          // ),
+          // Card(
+          //   child: InkWell(
+          //     onTap: () {
+          //       context.read<DashboardCubit>().openTsaOfCube(context);
+          //     },
+          //     child: const Column(
+          //       mainAxisAlignment: MainAxisAlignment.center,
+          //       children: <Widget>[
+          //         Icon(Icons.shape_line, size: 48),
+          //         Text('TSA of Cube'),
+          //       ],
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
