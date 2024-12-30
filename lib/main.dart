@@ -20,9 +20,13 @@
 // }
 
 import 'package:bottomnavigationview/app.dart';
+import 'package:bottomnavigationview/service_locator/service_locator.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initDependency();
+
   runApp(
     const App(),
   );
