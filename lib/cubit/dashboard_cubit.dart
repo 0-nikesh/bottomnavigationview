@@ -1,8 +1,11 @@
 import 'package:bottomnavigationview/bloc/arithmetic_bloc.dart';
+import 'package:bottomnavigationview/bloc/counter_bloc.dart';
 import 'package:bottomnavigationview/cubit/arithemetic_cubit.dart';
 import 'package:bottomnavigationview/cubit/counter_cubit.dart';
 import 'package:bottomnavigationview/cubit/student_cubit.dart';
+import 'package:bottomnavigationview/view/arithemetic_bloc_view.dart';
 import 'package:bottomnavigationview/view/arithemetic_cubit_view.dart';
+import 'package:bottomnavigationview/view/counter_bloc_view.dart';
 import 'package:bottomnavigationview/view/counter_cubit_view.dart';
 import 'package:bottomnavigationview/view/student_cubit_view.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +14,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class DashboardCubit extends Cubit<void> {
   DashboardCubit(
     this._counterCubit,
+    this._counterBloc,
     this._arithmeticCubit,
     this._studentCubit,
     this._arithmeticBloc,
@@ -23,6 +27,7 @@ class DashboardCubit extends Cubit<void> {
   final ArithmeticCubit _arithmeticCubit;
   final StudentCubit _studentCubit;
   final ArithmeticBloc _arithmeticBloc;
+  final CounterBloc _counterBloc;
   // final SimpleInterestCubit _simpleInterestCubit;
   // final AreaofcircleCubit _areaofcircleCubit;
   // final TsaofcubeCubit _tsaofcubeCubit;
@@ -34,6 +39,18 @@ class DashboardCubit extends Cubit<void> {
         builder: (_) => BlocProvider.value(
           value: _counterCubit,
           child: const CounterCubitView(),
+        ),
+      ),
+    );
+  }
+
+  void openCounterBlocView(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => BlocProvider.value(
+          value: _counterBloc,
+          child: const CounterBlocView(),
         ),
       ),
     );
@@ -57,7 +74,7 @@ class DashboardCubit extends Cubit<void> {
       MaterialPageRoute(
         builder: (_) => BlocProvider.value(
           value: _arithmeticBloc,
-          child: const ArithmeticCubitView(),
+          child: const ArithemeticBlocView(),
         ),
       ),
     );
