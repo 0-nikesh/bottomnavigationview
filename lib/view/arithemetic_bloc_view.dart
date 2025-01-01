@@ -1,5 +1,4 @@
 import 'package:bottomnavigationview/bloc/arithmetic_bloc.dart';
-import 'package:bottomnavigationview/cubit/arithemetic_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -29,7 +28,7 @@ class _ArithemeticBlocViewState extends State<ArithemeticBlocView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Arithmetic Cubit View'),
+        title: const Text('Arithmetic Bloc View'),
         centerTitle: true,
       ),
       body: SafeArea(
@@ -59,7 +58,7 @@ class _ArithemeticBlocViewState extends State<ArithemeticBlocView> {
                 ),
               ),
               const SizedBox(height: 10),
-              BlocBuilder<ArithmeticCubit, int>(
+              BlocBuilder<ArithmeticBloc, int>(
                 builder: (context, result) {
                   return Text(
                     "Result: $result",
