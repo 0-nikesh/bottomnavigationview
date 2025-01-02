@@ -9,33 +9,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return MultiBlocProvider(
-    //   providers: [
-    //     BlocProvider(
-    //       create: (context) => serviceLocator<ArithmeticCubit>(),
-    //     ),
-    //     BlocProvider(
-    //       create: (context) => serviceLocator<StudentCubit>(),
-    //     ),
-    //     BlocProvider(
-    //       create: (context) => serviceLocator<DashboardCubit>(),
-    //     ),
-    //     // BlocProvider(create: (context) => CounterCubit()),
-    //     // BlocProvider(create: (context) => ArithmeticCubit()),
-    //     // BlocProvider(create: (context) => StudentCubit()),
-    //     // // BlocProvider(create: (context) => AreaofcircleCubit()),
-    //     // // BlocProvider(create: (context) => SimpleInterestCubit()),
-    //     // // BlocProvider(create: (context) => TsaofcubeCubit()),
-    //     // BlocProvider(
-    //     //     create: (context) => DashboardCubit(
-    //     //           context.read<CounterCubit>(),
-    //     //           context.read<ArithmeticCubit>(),
-    //     //           context.read<StudentCubit>(),
-    //     //           // context.read<SimpleInterestCubit>(),
-    //     //           // context.read<AreaofcircleCubit>(),
-    //     //           // context.read<TsaofcubeCubit>(),
-    //     //         ))
-    //   ],
+
     return MaterialApp(
       // title: 'Flutter BLoC',
       debugShowCheckedModeBanner: false,

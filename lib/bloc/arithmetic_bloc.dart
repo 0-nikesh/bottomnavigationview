@@ -11,12 +11,12 @@ class ArithmeticBloc extends Bloc<ArithmeticEvent, int> {
     });
 
     on<SubtractEvent>((event, emit) {
-      final result = event.first + event.second;
+      final result = event.first - event.second;
       emit(result);
     });
 
     on<MultiplyEvent>((event, emit) {
-      final result = event.first + event.second;
+      final result = event.first * event.second;
       emit(result);
     });
   }
